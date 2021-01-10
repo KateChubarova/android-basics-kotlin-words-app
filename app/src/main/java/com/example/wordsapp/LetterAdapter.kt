@@ -24,6 +24,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wordsapp.fragment.WordListFragment.Companion.LETTER
 
 
 /**
@@ -74,7 +75,7 @@ class LetterAdapter :
             // Add the selected letter to the intent as extra data
             // The text of Buttons are [CharSequence], a list of characters,
             // so it must be explicitly converted into a [String].
-            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())
+            intent.putExtra(LETTER, holder.button.text.toString())
             // Start an activity using the data and destination from the Intent.
             context.startActivity(intent)
         }
