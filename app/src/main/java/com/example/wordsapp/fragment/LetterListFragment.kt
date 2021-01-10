@@ -42,6 +42,19 @@ class LetterListFragment : Fragment() {
         setIcon(layoutButton)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_switch_layout -> {
+                isLinearLayoutManager = !isLinearLayoutManager
+                chooseLayout()
+                setIcon(item)
+
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     private fun setIcon(menuItem: MenuItem?) {
         if (menuItem == null)
             return
